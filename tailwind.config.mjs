@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         display: ['Bricolage Grotesque', 'system-ui', 'sans-serif'],
         body: ['DM Sans', 'system-ui', 'sans-serif'],
+        title: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
         amber: {
