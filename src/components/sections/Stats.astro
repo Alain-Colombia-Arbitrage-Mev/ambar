@@ -1,0 +1,60 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+  description: string;
+}
+
+const stats: Stat[] = [
+  { value: "Top 1%", label: "Posicionamiento", description: "En plataformas principales" },
+  { value: "500MB", label: "Internet Fibra", description: "Conexión dedicada exclusiva" },
+  { value: "24/7", label: "Soporte Técnico", description: "Asistencia permanente" },
+  { value: "4K UHD", label: "Streaming", description: "Máxima calidad de video" }
+];
+
+const platforms = ['CHATURBATE', 'STREAMMATE', 'STRIPCHAT', 'BONGACAMS', 'LIVEJASMIN', 'CAMSODA'];
+---
+
+<section id="stats" class="py-12 sm:py-16 md:py-20 border-y border-white/5 relative">
+  <!-- Background Glow -->
+  <div class="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-purple-500/5 pointer-events-none"></div>
+  
+  <div class="container relative">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+      {stats.map((stat, index) => (
+        <div 
+          data-animate
+          class="text-center lg:text-left group cursor-default p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] backdrop-blur-lg border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+          style={`animation-delay: ${index * 100}ms; box-shadow: 0 4px 24px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.03);`}
+        >
+          <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-2 group-hover:text-gradient-gold transition-all duration-500 font-display">
+            {stat.value}
+          </div>
+          <div class="text-xs sm:text-sm font-semibold text-neutral-300 uppercase tracking-wide mb-1">
+            {stat.label}
+          </div>
+          <div class="text-[10px] sm:text-xs text-neutral-500">
+            {stat.description}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Platform Marquee -->
+<div class="py-6 sm:py-8 border-b border-white/5 overflow-hidden bg-black/50 relative">
+  <div class="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+  
+  <div class="animate-marquee flex gap-8 sm:gap-12 items-center whitespace-nowrap">
+    {[...platforms, ...platforms, ...platforms].map((platform) => (
+      <div class="flex items-center gap-3 sm:gap-4">
+        <span class="text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.25em] text-neutral-600 hover:text-neutral-400 transition-colors duration-300">{platform}</span>
+        <svg class="w-1 h-1 sm:w-1.5 sm:h-1.5 text-amber-600" fill="currentColor" viewBox="0 0 8 8">
+          <circle cx="4" cy="4" r="4" />
+        </svg>
+      </div>
+    ))}
+  </div>
+</div>

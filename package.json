@@ -1,0 +1,27 @@
+{
+  "name": "studio-ambar",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Studio Ambar - Estudio Webcam Profesional en Soacha, Cundinamarca",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "pages:dev": "wrangler pages dev dist"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.1.0",
+    "astro": "^4.15.0"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^11.0.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/node": "^20.14.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.61.0"
+  }
+}

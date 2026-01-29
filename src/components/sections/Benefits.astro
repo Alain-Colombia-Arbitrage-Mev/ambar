@@ -1,0 +1,140 @@
+---
+interface Benefit {
+  icon: string;
+  iconColor: string;
+  bgColor: string;
+  borderColor: string;
+  title: string;
+  description: string;
+}
+
+const benefits: Benefit[] = [
+  {
+    icon: 'academic',
+    iconColor: 'text-amber-500',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'hover:border-amber-500/30',
+    title: 'Clases de Inglés & Técnicas de Chat',
+    description: 'No necesitas saber inglés para empezar. Ofrecemos scripts pre-diseñados y clases semanales enfocadas en conversación y negociación con usuarios internacionales.'
+  },
+  {
+    icon: 'heart',
+    iconColor: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'hover:border-blue-500/30',
+    title: 'Apoyo Psicológico Profesional',
+    description: 'La salud mental es prioridad. Contamos con psicóloga in-house para ayudarte a manejar el estrés y establecer límites sanos.'
+  },
+  {
+    icon: 'sparkles',
+    iconColor: 'text-pink-400',
+    bgColor: 'bg-pink-500/10',
+    borderColor: 'hover:border-pink-500/30',
+    title: 'Maquillaje & Estilismo para Cámara',
+    description: 'Te enseñamos técnicas de maquillaje específicas para cámara. Además, tenemos stock de lencería y disfraces para rotar en tus shows.'
+  },
+  {
+    icon: 'wallet',
+    iconColor: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'hover:border-emerald-500/30',
+    title: 'Adelantos de Nómina Disponibles',
+    description: 'Para modelos con buen rendimiento, ofrecemos sistema de adelantos sobre las ganancias generadas. Flexibilidad financiera real.'
+  }
+];
+
+const icons: Record<string, string> = {
+  academic: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />`,
+  heart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />`,
+  sparkles: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />`,
+  wallet: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />`
+};
+---
+
+<section id="beneficios" class="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-transparent via-neutral-950/50 to-transparent relative">
+  <div class="container">
+    <!-- Section Header -->
+    <div data-animate class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
+      <span class="text-[10px] sm:text-xs uppercase tracking-widest text-amber-500 font-semibold mb-3 sm:mb-4 block">
+        Programa Integral
+      </span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4 sm:mb-6 font-display">
+        Más que un Estudio Webcam,
+        <span class="text-neutral-500 block mt-1">Un Centro de Formación</span>
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-neutral-400">
+        En Studio Ambar invertimos en tu desarrollo profesional y bienestar personal.
+      </p>
+    </div>
+
+    <!-- Benefits Accordion -->
+    <div class="max-w-3xl mx-auto space-y-3 sm:space-y-4 px-4">
+      {benefits.map((benefit, index) => (
+        <details 
+          data-animate
+          class={`group rounded-xl sm:rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/5 overflow-hidden transition-all duration-300 ${benefit.borderColor}`}
+          style="box-shadow: 0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03);"
+          open={index === 0}
+        >
+          <summary class="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none select-none">
+            <div class="flex items-center gap-3 sm:gap-4">
+              <div class={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl ${benefit.bgColor} border border-white/10 flex items-center justify-center ${benefit.iconColor} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <Fragment set:html={icons[benefit.icon]} />
+                </svg>
+              </div>
+              <span class="text-sm sm:text-base md:text-lg font-medium text-white font-display">{benefit.title}</span>
+            </div>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-neutral-500 transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-6 pb-4 sm:pb-6 pl-[3.5rem] sm:pl-[4.5rem]">
+            <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              {benefit.description}
+            </p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <!-- CTA Banner -->
+    <div data-animate class="mt-12 sm:mt-16 md:mt-20 max-w-4xl mx-auto px-4">
+      <div class="relative p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] backdrop-blur-2xl border border-white/10 overflow-hidden text-center" style="box-shadow: 0 16px 48px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <!-- Background Glow -->
+        <div class="absolute top-0 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-amber-500/10 blur-[80px] sm:blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <h3 class="relative z-10 text-xl sm:text-2xl md:text-3xl text-white font-bold mb-2 sm:mb-3 font-display">
+          ¿Lista para cambiar tu vida en Soacha?
+        </h3>
+        <p class="relative z-10 text-sm sm:text-base text-neutral-400 mb-6 sm:mb-8 max-w-lg mx-auto">
+          Agenda una entrevista de 15 minutos. Sin compromisos, sin presiones.
+        </p>
+        <a 
+          href="#contacto" 
+          class="btn-primary inline-flex text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+        >
+          Postularme Ahora
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Internal Links for SEO -->
+    <div data-animate class="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4 text-sm px-4">
+      <a href="#instalaciones" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        Ver nuestras instalaciones →
+      </a>
+      <span class="text-neutral-700">|</span>
+      <a href="#faq" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        Preguntas frecuentes →
+      </a>
+      <span class="text-neutral-700">|</span>
+      <a href="/terminos" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        Términos y condiciones →
+      </a>
+    </div>
+  </div>
+</section>

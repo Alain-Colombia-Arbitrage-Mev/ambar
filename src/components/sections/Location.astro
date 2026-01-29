@@ -1,0 +1,128 @@
+---
+interface TechSpec {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const techSpecs: TechSpec[] = [
+  { icon: 'camera', title: 'Cámaras Logitech Brio 4K', description: 'Máxima nitidez y calidad de streaming profesional.' },
+  { icon: 'cpu', title: 'PCs Gaming i7 + RTX 4060', description: 'Transmisiones fluidas a 60fps sin interrupciones.' },
+  { icon: 'light', title: 'Iluminación LED Profesional', description: 'Sistema RGB con control desde app.' },
+  { icon: 'wifi', title: 'Internet Fibra 500MB', description: 'Conexión dedicada sin caídas ni lag.' }
+];
+
+const icons: Record<string, string> = {
+  camera: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />`,
+  cpu: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />`,
+  light: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />`,
+  wifi: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />`
+};
+---
+
+<section id="instalaciones" class="py-16 sm:py-20 md:py-24 relative">
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+      <!-- Left Column: Content -->
+      <div data-animate class="px-4 lg:px-0">
+        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-amber-500 font-semibold mb-3 sm:mb-4 block">
+          Infraestructura Premium
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4 sm:mb-6 font-display">
+          Instalaciones de
+          <span class="text-neutral-500 block mt-1">Primer Nivel en Soacha</span>
+        </h2>
+        <p class="text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed mb-8 sm:mb-10">
+          Nuestro <strong class="text-white">estudio webcam en Soacha</strong> está ubicado estratégicamente 
+          en el Centro Comercial Mercurio. Seguridad 24/7, discreción total y habitaciones 
+          completamente insonorizadas.
+        </p>
+
+        <!-- Tech Specs -->
+        <div class="space-y-4 sm:space-y-6">
+          {techSpecs.map((spec) => (
+            <div class="flex items-start gap-3 sm:gap-4 group">
+              <div class="mt-0.5 p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-neutral-900 border border-white/10 text-amber-500 group-hover:border-amber-500/50 group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <Fragment set:html={icons[spec.icon]} />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-sm sm:text-base text-white font-medium mb-0.5 sm:mb-1">{spec.title}</h4>
+                <p class="text-xs sm:text-sm text-neutral-500">{spec.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Grid -->
+      <div data-animate class="grid grid-cols-2 gap-3 sm:gap-4 px-4 lg:px-0">
+        <!-- Main Image with Glass Effect -->
+        <div class="col-span-2 aspect-video rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl border border-white/10 relative overflow-hidden group hover:border-amber-500/30 transition-all duration-500" style="box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(245,158,11,0.1),transparent)]"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-500">
+                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span class="text-neutral-500 text-xs sm:text-sm font-medium">Tour Virtual Próximamente</span>
+            </div>
+          </div>
+          <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-black/60 backdrop-blur border border-white/10">
+            <span class="text-[10px] sm:text-xs text-white font-medium">Suite Principal — Estudio Webcam Soacha</span>
+          </div>
+        </div>
+
+        <!-- Secondary Images with Glass Effect -->
+        <div class="aspect-square rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl border border-white/10 relative overflow-hidden group hover:border-purple-500/30 transition-all duration-500" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04);">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(139,92,246,0.15),transparent)]"></div>
+          <div class="absolute bottom-3 left-3 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-black/60 backdrop-blur border border-white/10">
+            <span class="text-[10px] sm:text-xs text-white">Zona Maquillaje</span>
+          </div>
+        </div>
+
+        <div class="aspect-square rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl border border-white/10 relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-500" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04);">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(16,185,129,0.15),transparent)]"></div>
+          <div class="absolute bottom-3 left-3 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-black/60 backdrop-blur border border-white/10">
+            <span class="text-[10px] sm:text-xs text-white">Lounge & Café</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location CTA with Glass Effect -->
+    <div data-animate class="mt-12 sm:mt-16 md:mt-20 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white/[0.02] backdrop-blur-xl border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 mx-4 lg:mx-0" style="box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03);">
+      <div class="text-center md:text-left">
+        <h3 class="text-xl sm:text-2xl text-white font-bold mb-2 font-display">Visita Nuestro Estudio en Soacha</h3>
+        <p class="text-sm sm:text-base text-neutral-400 max-w-lg">
+          Agenda una visita presencial gratuita. Te mostraremos los equipos y explicaremos todo.
+        </p>
+      </div>
+      <a href="#contacto" class="btn-ghost whitespace-nowrap text-sm sm:text-base">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        Agendar Visita Gratis
+      </a>
+    </div>
+
+    <!-- Internal Links for SEO -->
+    <div data-animate class="mt-10 sm:mt-12 flex flex-wrap justify-center gap-4 text-sm px-4">
+      <a href="#beneficios" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        ← Ver todos los beneficios
+      </a>
+      <span class="text-neutral-700">|</span>
+      <a href="#faq" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        Preguntas frecuentes →
+      </a>
+      <span class="text-neutral-700">|</span>
+      <a href="/privacidad" class="text-neutral-500 hover:text-amber-500 transition-colors">
+        Política de privacidad →
+      </a>
+    </div>
+  </div>
+</section>

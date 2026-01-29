@@ -1,0 +1,234 @@
+---
+import Layout from '@/components/layout/Layout.astro';
+
+// SEO Configuration
+const pageTitle = "Política de Privacidad | Studio Ambar - Estudio Webcam Soacha";
+const pageDescription = "Conoce cómo protegemos tus datos personales en Studio Ambar. Política de privacidad conforme a la Ley 1581 de 2012 de Colombia. Estudio webcam profesional en Soacha.";
+const pageKeywords = [
+  "política de privacidad studio ambar",
+  "protección de datos webcam",
+  "privacidad modelos webcam soacha",
+  "ley 1581 estudio webcam",
+  "datos personales webcam colombia",
+  "seguridad información modelos",
+  "geobloqueo colombia webcam",
+  "privacidad estudio webcam cundinamarca"
+];
+const canonicalUrl = "https://studioambar.com/privacidad";
+const lastModified = "2026-01-29";
+
+// Schema.org WebPage
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "dateModified": lastModified,
+  "inLanguage": "es-CO",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Studio Ambar",
+    "url": "https://studioambar.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Política de Privacidad",
+    "description": "Documento legal que describe cómo Studio Ambar recopila, usa y protege los datos personales"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Ambar S.A.S.",
+    "url": "https://studioambar.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://studioambar.com/og-image.jpg"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://studioambar.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Política de Privacidad",
+        "item": canonicalUrl
+      }
+    ]
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical={canonicalUrl}
+  includeSchemas={false}
+>
+  <!-- Custom Schema for this page -->
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} slot="head" />
+  
+  <!-- OpenGraph specific for this page -->
+  <meta property="og:type" content="article" slot="head" />
+  <meta property="article:modified_time" content={lastModified} slot="head" />
+  <meta property="article:section" content="Legal" slot="head" />
+  
+  <section class="pt-32 pb-20 min-h-screen">
+    <div class="container max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-neutral-500" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" class="hover:text-amber-500 transition-colors" itemprop="item">
+              <span itemprop="name">Inicio</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li><span class="mx-2">/</span></li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="text-white" itemprop="name">Política de Privacidad</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold mb-4 block">Legal</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 font-display">
+          Política de Privacidad
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
+          <span>Última actualización: <time datetime={lastModified}>Enero 2026</time></span>
+          <span class="text-neutral-600">•</span>
+          <span>Aplica a: Modelos y aspirantes</span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <article class="prose prose-invert prose-amber max-w-none space-y-8" itemscope itemtype="https://schema.org/Article">
+        <meta itemprop="headline" content="Política de Privacidad de Studio Ambar" />
+        <meta itemprop="dateModified" content={lastModified} />
+        
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">1. Información que Recopilamos</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            En <strong class="text-white">Studio Ambar</strong>, el estudio webcam líder en Soacha, Cundinamarca, recopilamos la siguiente información para gestionar tu relación laboral:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Datos de identificación:</strong> nombre completo, cédula de ciudadanía o PEP, fecha de nacimiento</li>
+            <li><strong class="text-neutral-300">Información de contacto:</strong> teléfono móvil, correo electrónico, dirección de residencia</li>
+            <li><strong class="text-neutral-300">Datos bancarios:</strong> número de cuenta para el procesamiento de pagos de comisiones</li>
+            <li><strong class="text-neutral-300">Información laboral:</strong> experiencia previa en modelaje webcam, horarios de disponibilidad</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">2. Uso de la Información</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Utilizamos tu información personal exclusivamente para:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li>Procesar y evaluar tu postulación como modelo webcam en Soacha</li>
+            <li>Gestionar el proceso de contratación, capacitación y acompañamiento</li>
+            <li>Realizar pagos quincenales de comisiones a través de Bancolombia, Nequi o USDT</li>
+            <li>Comunicarnos contigo sobre horarios, capacitaciones y oportunidades</li>
+            <li>Cumplir con obligaciones legales y tributarias ante la DIAN</li>
+            <li>Implementar el geobloqueo para proteger tu privacidad</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">3. Protección y Seguridad de Datos</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Implementamos medidas de seguridad de nivel empresarial:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Encriptación SSL/TLS:</strong> todas las comunicaciones están cifradas</li>
+            <li><strong class="text-neutral-300">Acceso restringido:</strong> solo personal autorizado accede a tu información</li>
+            <li><strong class="text-neutral-300">Servidores seguros:</strong> infraestructura protegida contra ataques</li>
+            <li><strong class="text-neutral-300">Geobloqueo Colombia:</strong> nadie en el país puede ver tus transmisiones</li>
+            <li><strong class="text-neutral-300">Backups encriptados:</strong> copias de seguridad regulares y protegidas</li>
+            <li><strong class="text-neutral-300">Nombres artísticos:</strong> protección total de tu identidad real</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">4. Compartir Información con Terceros</h2>
+          <p class="text-neutral-400 leading-relaxed">
+            <strong class="text-amber-500">NO</strong> vendemos, alquilamos ni compartimos tu información personal con terceros para fines comerciales. Solo compartimos datos cuando:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2 mt-4">
+            <li>Es requerido por ley o autoridades competentes colombianas</li>
+            <li>Con proveedores de servicios de pago (Bancolombia, Nequi) para procesar tus comisiones</li>
+            <li>Con plataformas de streaming bajo estrictos acuerdos de confidencialidad</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">5. Tus Derechos (Ley 1581 de 2012)</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            De acuerdo con la legislación colombiana de protección de datos, tienes derecho a:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Acceso:</strong> conocer qué datos tenemos sobre ti</li>
+            <li><strong class="text-neutral-300">Rectificación:</strong> actualizar o corregir información incorrecta</li>
+            <li><strong class="text-neutral-300">Cancelación:</strong> solicitar eliminación de tus datos</li>
+            <li><strong class="text-neutral-300">Oposición:</strong> negarte a ciertos tratamientos de datos</li>
+            <li><strong class="text-neutral-300">Revocación:</strong> retirar tu consentimiento en cualquier momento</li>
+            <li><strong class="text-neutral-300">Portabilidad:</strong> recibir tus datos en formato estructurado</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-amber-500/5 backdrop-blur-xl border border-amber-500/20" style="box-shadow: 0 4px 24px rgba(245,158,11,0.1);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">6. Contacto para Ejercer tus Derechos</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Para ejercer cualquiera de tus derechos o resolver dudas sobre esta política:
+          </p>
+          <ul class="text-neutral-400 space-y-2">
+            <li><strong class="text-white">Email:</strong> <a href="mailto:privacidad@studioambar.com" class="text-amber-500 hover:underline">privacidad@studioambar.com</a></li>
+            <li><strong class="text-white">WhatsApp:</strong> <a href="https://wa.me/573001234567" class="text-amber-500 hover:underline">+57 300 123 4567</a></li>
+            <li><strong class="text-white">Dirección:</strong> Centro Comercial Mercurio, Local 401, Soacha, Cundinamarca</li>
+            <li><strong class="text-white">Horario:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Related Links -->
+      <aside class="mt-12 p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10">
+        <h3 class="text-lg font-semibold text-white mb-4 font-display">Documentos Legales Relacionados</h3>
+        <div class="flex flex-wrap gap-4">
+          <a href="/terminos" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Términos y Condiciones
+          </a>
+          <a href="/datos" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Tratamiento de Datos
+          </a>
+        </div>
+      </aside>
+
+      <!-- Back Link -->
+      <nav class="mt-8 pt-8 border-t border-white/10">
+        <a href="/" class="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver al inicio
+        </a>
+      </nav>
+    </div>
+  </section>
+</Layout>

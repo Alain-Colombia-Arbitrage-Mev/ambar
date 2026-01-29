@@ -1,0 +1,47 @@
+---
+interface Props {
+  variant?: 'default' | 'spotlight' | 'glass';
+  padding?: 'sm' | 'md' | 'lg';
+  hover?: boolean;
+  class?: string;
+}
+
+const {
+  variant = 'default',
+  padding = 'md',
+  hover = true,
+  class: className,
+} = Astro.props;
+
+const baseStyles = `
+  rounded-2xl
+  border border-white/10
+  transition-all duration-300
+`;
+
+const variants = {
+  default: 'bg-neutral-900/40',
+  spotlight: 'spotlight-card bg-white/[0.02]',
+  glass: 'glass',
+};
+
+const paddings = {
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+};
+
+const hoverStyles = hover ? 'hover:border-amber-500/30 hover:bg-white/[0.03]' : '';
+
+const classes = [
+  baseStyles,
+  variants[variant],
+  paddings[padding],
+  hoverStyles,
+  className,
+].join(' ');
+---
+
+<div class={classes}>
+  <slot />
+</div>

@@ -1,0 +1,170 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Beneficios', href: '#beneficios' },
+  { label: 'Instalaciones', href: '#instalaciones' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contacto', href: '#contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 p-4">
+  <nav class="max-w-5xl mx-auto" aria-label="Navegación principal">
+    <div class="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-full px-2 py-2 flex items-center justify-between shadow-2xl shadow-black/50" style="box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);">
+      <!-- Logo -->
+      <a 
+        href="/" 
+        class="flex items-center gap-3 px-3 sm:px-4 py-2 rounded-full hover:bg-white/5 transition-all duration-300 group"
+        aria-label="Studio Ambar - Ir al inicio"
+      >
+        <div class="relative w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg viewBox="0 0 32 32" class="w-full h-full drop-shadow-lg" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#fbbf24"/>
+                <stop offset="100%" style="stop-color:#d97706"/>
+              </linearGradient>
+            </defs>
+            <circle cx="16" cy="16" r="14" fill="url(#logo-gradient)" class="drop-shadow-lg"/>
+            <path d="M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14 Z" fill="#000" opacity="0.9"/>
+          </svg>
+        </div>
+        <span class="text-sm font-bold tracking-tight text-white hidden sm:block font-display">
+          STUDIO AMBAR
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="nav-link"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-2">
+        <a
+          href="#contacto"
+          class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-xs font-bold px-4 sm:px-5 py-2.5 rounded-full hover:from-amber-400 hover:to-amber-500 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_25px_-5px_rgba(245,158,11,0.5)] hover:shadow-[0_0_35px_-5px_rgba(245,158,11,0.7)]"
+        >
+          <span>Postularme</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-toggle"
+          class="lg:hidden p-2.5 rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+        >
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="lg:hidden mt-3 bg-black/60 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 hidden opacity-0 -translate-y-4 transition-all duration-300" style="box-shadow: 0 16px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);"
+      role="menu"
+    >
+      <div class="flex flex-col gap-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="mobile-nav-link px-4 py-3 text-sm font-medium rounded-xl text-neutral-300 hover:text-white hover:bg-white/5 transition-all duration-200 active:scale-[0.98]"
+            role="menuitem"
+          >
+            {item.label}
+          </a>
+        ))}
+        <hr class="border-white/10 my-3" />
+        <a
+          href="#contacto"
+          class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-sm font-bold px-5 py-3 rounded-xl hover:from-amber-400 hover:to-amber-500 transition-all duration-300 active:scale-[0.98] shadow-lg"
+          role="menuitem"
+        >
+          <span>Postularme Ahora</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuToggle?.querySelector('svg');
+  
+  menuToggle?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    
+    if (isHidden) {
+      mobileMenu?.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        mobileMenu?.classList.remove('opacity-0', '-translate-y-4');
+        mobileMenu?.classList.add('opacity-100', 'translate-y-0');
+      });
+      menuToggle?.setAttribute('aria-expanded', 'true');
+      // Change to X icon
+      if (menuIcon) {
+        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+      }
+    } else {
+      mobileMenu?.classList.add('opacity-0', '-translate-y-4');
+      mobileMenu?.classList.remove('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        mobileMenu?.classList.add('hidden');
+      }, 300);
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      // Change back to menu icon
+      if (menuIcon) {
+        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+      }
+    }
+  });
+  
+  // Close menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('opacity-0', '-translate-y-4');
+      mobileMenu?.classList.remove('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        mobileMenu?.classList.add('hidden');
+      }, 300);
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      if (menuIcon) {
+        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>

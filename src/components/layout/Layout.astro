@@ -1,0 +1,160 @@
+---
+import '@/styles/global.css';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import FloatingButtons from '@/components/ui/FloatingButtons.astro';
+import { defaultSEO, businessSchema, faqSchema } from '@/utils/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  canonical?: string;
+  includeSchemas?: boolean;
+}
+
+const {
+  title = defaultSEO.title,
+  description = defaultSEO.description,
+  keywords = defaultSEO.keywords,
+  canonical = Astro.url.href,
+  includeSchemas = true
+} = Astro.props;
+
+const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Ambar`;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords.join(', ')} />
+  <meta name="author" content="Studio Ambar" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit-after" content="7 days" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonical} />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="Studio Ambar" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonical} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content="/og-image.jpg" />
+  
+  <!-- Geo Tags for Local SEO -->
+  <meta name="geo.region" content="CO-CUN" />
+  <meta name="geo.placename" content="Soacha" />
+  <meta name="geo.position" content="4.5833;-74.2167" />
+  <meta name="ICBM" content="4.5833, -74.2167" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- Preconnect to external origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  
+  <!-- Structured Data -->
+  {includeSchemas && (
+    <>
+      <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    </>
+  )}
+  
+  <!-- Additional head content from pages -->
+  <slot name="head" />
+</head>
+<body class="bg-noise antialiased">
+  <!-- Ambient Background Effects -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute inset-0 bg-grid opacity-20"></div>
+    <div class="absolute top-[-30%] left-[10%] w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-amber-600/5 rounded-full blur-[100px] sm:blur-[150px]"></div>
+    <div class="absolute bottom-[-20%] right-[0%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-900/5 rounded-full blur-[80px] sm:blur-[120px]"></div>
+  </div>
+  
+  <Header />
+  
+  <main class="relative z-10">
+    <slot />
+  </main>
+  
+  <Footer />
+  
+  <!-- Floating Social Buttons (WhatsApp & Signal) -->
+  <FloatingButtons />
+  
+  <!-- Scripts -->
+  <script>
+    // Spotlight Effect
+    document.addEventListener('mousemove', (e) => {
+      const cards = document.querySelectorAll<HTMLElement>('.spotlight-card');
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-up');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Initial setup - add opacity and transform to animated elements
+    document.querySelectorAll('[data-animate]').forEach((el) => {
+      el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links (backup if not in Header)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+---
+import Layout from '@/components/layout/Layout.astro';
+
+// SEO Configuration
+const pageTitle = "Términos y Condiciones | Studio Ambar - Trabajo Webcam Soacha";
+const pageDescription = "Términos y condiciones para trabajar como modelo webcam en Studio Ambar, Soacha. Conoce tus derechos, obligaciones, sistema de pagos y beneficios. Sin experiencia requerida.";
+const pageKeywords = [
+  "términos condiciones webcam soacha",
+  "contrato modelo webcam",
+  "requisitos trabajo webcam soacha",
+  "condiciones laborales webcam colombia",
+  "pagos modelos webcam",
+  "comisiones webcam soacha",
+  "trabajo webcam cundinamarca",
+  "empleo modelo cam soacha"
+];
+const canonicalUrl = "https://studioambar.com/terminos";
+const lastModified = "2026-01-29";
+
+// Schema.org WebPage
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": canonicalUrl,
+  "dateModified": lastModified,
+  "inLanguage": "es-CO",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Studio Ambar",
+    "url": "https://studioambar.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Términos y Condiciones de Servicio",
+    "description": "Documento legal que establece las condiciones para trabajar como modelo webcam en Studio Ambar"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Ambar S.A.S.",
+    "url": "https://studioambar.com"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://studioambar.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Términos y Condiciones",
+        "item": canonicalUrl
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "Service",
+    "name": "Trabajo como Modelo Webcam",
+    "provider": {
+      "@type": "Organization",
+      "name": "Studio Ambar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Soacha",
+        "addressRegion": "Cundinamarca",
+        "addressCountry": "CO"
+      }
+    },
+    "areaServed": "Soacha, Cundinamarca, Colombia",
+    "serviceType": "Estudio de Modelaje Webcam"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical={canonicalUrl}
+  includeSchemas={false}
+>
+  <!-- Custom Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} slot="head" />
+  
+  <section class="pt-32 pb-20 min-h-screen">
+    <div class="container max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-neutral-500" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" class="hover:text-amber-500 transition-colors" itemprop="item">
+              <span itemprop="name">Inicio</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li><span class="mx-2">/</span></li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="text-white" itemprop="name">Términos y Condiciones</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold mb-4 block">Legal</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 font-display">
+          Términos y Condiciones
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
+          <span>Última actualización: <time datetime={lastModified}>Enero 2026</time></span>
+          <span class="text-neutral-600">•</span>
+          <span>Trabajo webcam en Soacha</span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <article class="prose prose-invert prose-amber max-w-none space-y-8">
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">1. Aceptación de Términos</h2>
+          <p class="text-neutral-400 leading-relaxed">
+            Al postularte y trabajar con <strong class="text-white">Studio Ambar</strong>, el mejor estudio webcam en Soacha, Cundinamarca, 
+            aceptas estos términos y condiciones en su totalidad. Este documento constituye un acuerdo legal vinculante 
+            entre tú (el/la modelo) y Studio Ambar S.A.S. Si no estás de acuerdo con alguno de los términos, 
+            no debes continuar con el proceso de postulación.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">2. Requisitos de Elegibilidad</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Para trabajar como modelo webcam en nuestro estudio de Soacha, debes cumplir con los siguientes requisitos:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-amber-500">Edad mínima:</strong> Ser mayor de 18 años de edad (obligatorio e irrenunciable)</li>
+            <li><strong class="text-neutral-300">Documento válido:</strong> Cédula de ciudadanía colombiana o Permiso Especial de Permanencia (PEP)</li>
+            <li><strong class="text-neutral-300">Sin antecedentes:</strong> No tener antecedentes penales vigentes</li>
+            <li><strong class="text-neutral-300">Aceptación de políticas:</strong> Cumplir con los términos de las plataformas de streaming</li>
+            <li><strong class="text-neutral-300">Compromiso:</strong> Disponibilidad para cumplir horarios acordados</li>
+          </ul>
+          <p class="text-sm text-amber-500 mt-4">
+            ⚠️ No se requiere experiencia previa. Ofrecemos capacitación completa.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">3. Relación Contractual</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            La relación entre Studio Ambar y las modelos se rige por:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Tipo de contrato:</strong> Prestación de servicios independiente</li>
+            <li><strong class="text-neutral-300">Remuneración:</strong> Sistema de comisiones basado en ingresos generados</li>
+            <li><strong class="text-neutral-300">Horarios:</strong> Flexibilidad horaria acordada mutuamente</li>
+            <li><strong class="text-neutral-300">Capacitación:</strong> Formación continua incluida sin costo adicional</li>
+            <li><strong class="text-neutral-300">Recursos:</strong> Acceso completo a instalaciones y equipos del estudio</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-emerald-500/5 backdrop-blur-xl border border-emerald-500/20" style="box-shadow: 0 4px 24px rgba(16,185,129,0.1);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">4. Sistema de Pagos y Comisiones</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Nuestro sistema de pagos es transparente y puntual:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-emerald-400">Frecuencia:</strong> Pagos quincenales (días 1 y 16 de cada mes)</li>
+            <li><strong class="text-neutral-300">Comisión:</strong> Porcentaje competitivo del mercado (detallado en contrato individual)</li>
+            <li><strong class="text-neutral-300">Métodos de pago:</strong> Bancolombia, Nequi, Daviplata, USDT (criptomonedas)</li>
+            <li><strong class="text-neutral-300">Reportes:</strong> Acceso a reportes detallados de ganancias en tiempo real</li>
+            <li><strong class="text-neutral-300">Transparencia:</strong> Sin deducciones ocultas ni costos de inscripción</li>
+            <li><strong class="text-neutral-300">Adelantos:</strong> Disponibles para modelos con buen rendimiento</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">5. Obligaciones del Modelo</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Como modelo de Studio Ambar en Soacha, te comprometes a:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li>Cumplir con los horarios y turnos acordados</li>
+            <li>Mantener comportamiento profesional durante las transmisiones</li>
+            <li>Respetar las políticas de las plataformas (Chaturbate, Streammate, etc.)</li>
+            <li>Cuidar los equipos e instalaciones del estudio</li>
+            <li>No revelar información confidencial del estudio ni de otras modelos</li>
+            <li>Asistir a las capacitaciones programadas</li>
+            <li>Mantener actualizada tu información de contacto y bancaria</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">6. Obligaciones del Estudio</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Studio Ambar se compromete a proporcionarte:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Tecnología:</strong> Equipos de alta calidad (cámaras Logitech Brio 4K, PCs gaming)</li>
+            <li><strong class="text-neutral-300">Conectividad:</strong> Internet fibra óptica de 500MB dedicados</li>
+            <li><strong class="text-neutral-300">Formación:</strong> Capacitación continua, clases de inglés y técnicas de chat</li>
+            <li><strong class="text-neutral-300">Soporte:</strong> Asistencia técnica 24/7</li>
+            <li><strong class="text-neutral-300">Pagos:</strong> Cumplimiento puntual según calendario establecido</li>
+            <li><strong class="text-neutral-300">Privacidad:</strong> Geobloqueo para Colombia y protección de identidad</li>
+            <li><strong class="text-neutral-300">Ambiente:</strong> Instalaciones seguras, limpias e insonorizadas</li>
+            <li><strong class="text-neutral-300">Bienestar:</strong> Acceso a apoyo psicológico profesional</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">7. Confidencialidad</h2>
+          <p class="text-neutral-400 leading-relaxed">
+            Ambas partes se comprometen a mantener estricta confidencialidad sobre: datos personales de modelos y staff, 
+            estrategias de negocio y posicionamiento, información financiera, procedimientos internos, y cualquier 
+            dato que pueda considerarse secreto comercial. <strong class="text-white">Esta obligación permanece vigente 
+            incluso después de terminada la relación laboral</strong>, con una duración mínima de 2 años post-contrato.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">8. Terminación del Contrato</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            La relación puede terminarse por:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Mutuo acuerdo:</strong> Cuando ambas partes lo decidan</li>
+            <li><strong class="text-neutral-300">Decisión unilateral:</strong> Con preaviso mínimo de 15 días</li>
+            <li><strong class="text-neutral-300">Causa justificada:</strong> Incumplimiento grave de estos términos</li>
+            <li><strong class="text-neutral-300">Violación de políticas:</strong> Infracción de normas de plataformas de streaming</li>
+          </ul>
+          <p class="text-sm text-neutral-500 mt-4">
+            En caso de terminación, se liquidarán todas las comisiones pendientes en el siguiente ciclo de pago.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-amber-500/5 backdrop-blur-xl border border-amber-500/20" style="box-shadow: 0 4px 24px rgba(245,158,11,0.1);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">9. Jurisdicción y Ley Aplicable</h2>
+          <p class="text-neutral-400 leading-relaxed">
+            Estos términos y condiciones se rigen por las leyes de la República de Colombia. Cualquier disputa 
+            o controversia será resuelta preferentemente mediante mediación. De no ser posible, se someterá a 
+            los tribunales competentes de <strong class="text-white">Soacha, Cundinamarca</strong>.
+          </p>
+        </div>
+      </article>
+
+      <!-- Related Links -->
+      <aside class="mt-12 p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10">
+        <h3 class="text-lg font-semibold text-white mb-4 font-display">Documentos Legales Relacionados</h3>
+        <div class="flex flex-wrap gap-4">
+          <a href="/privacidad" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Política de Privacidad
+          </a>
+          <a href="/datos" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Tratamiento de Datos
+          </a>
+        </div>
+      </aside>
+
+      <!-- CTA -->
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-r from-amber-500/10 to-amber-600/5 border border-amber-500/20 text-center">
+        <h3 class="text-xl font-semibold text-white mb-3 font-display">¿Lista para comenzar?</h3>
+        <p class="text-neutral-400 mb-6">Postúlate hoy y comienza tu carrera como modelo webcam en Soacha</p>
+        <a href="/#contacto" class="btn-primary inline-flex">
+          Postularme Ahora
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Back Link -->
+      <nav class="mt-8 pt-8 border-t border-white/10">
+        <a href="/" class="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver al inicio
+        </a>
+      </nav>
+    </div>
+  </section>
+</Layout>

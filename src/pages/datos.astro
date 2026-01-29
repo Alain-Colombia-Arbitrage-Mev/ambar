@@ -1,0 +1,357 @@
+---
+import Layout from '@/components/layout/Layout.astro';
+
+// SEO Configuration
+const pageTitle = "Tratamiento de Datos Personales | Studio Ambar - Ley 1581 Colombia";
+const pageDescription = "Política de tratamiento de datos personales de Studio Ambar según la Ley 1581 de 2012. Conoce cómo protegemos tu información como modelo webcam en Soacha, Cundinamarca.";
+const pageKeywords = [
+  "tratamiento datos personales webcam",
+  "ley 1581 de 2012 webcam",
+  "habeas data modelos webcam",
+  "protección datos colombia",
+  "derechos arco webcam",
+  "datos personales soacha",
+  "privacidad modelos cam",
+  "superintendencia industria comercio"
+];
+const canonicalUrl = "https://studioambar.com/datos";
+const lastModified = "2026-01-29";
+
+// Schema.org WebPage + LegalService
+const schemas = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": canonicalUrl,
+      "dateModified": lastModified,
+      "inLanguage": "es-CO",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Studio Ambar",
+        "url": "https://studioambar.com"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://studioambar.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tratamiento de Datos",
+            "item": canonicalUrl
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Studio Ambar S.A.S.",
+      "url": "https://studioambar.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Centro Comercial Mercurio, Local 401",
+        "addressLocality": "Soacha",
+        "addressRegion": "Cundinamarca",
+        "postalCode": "250051",
+        "addressCountry": "CO"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Protección de Datos",
+        "email": "datos@studioambar.com",
+        "telephone": "+57-300-123-4567"
+      },
+      "sameAs": [
+        "https://www.instagram.com/studioambar",
+        "https://wa.me/573001234567"
+      ]
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical={canonicalUrl}
+  includeSchemas={false}
+>
+  <!-- Custom Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemas)} slot="head" />
+  
+  <section class="pt-32 pb-20 min-h-screen">
+    <div class="container max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-neutral-500" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" class="hover:text-amber-500 transition-colors" itemprop="item">
+              <span itemprop="name">Inicio</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li><span class="mx-2">/</span></li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="text-white" itemprop="name">Tratamiento de Datos</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-12">
+        <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold mb-4 block">
+          Ley 1581 de 2012
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 font-display">
+          Política de Tratamiento de Datos Personales
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
+          <span>Conforme al Decreto 1377 de 2013</span>
+          <span class="text-neutral-600">•</span>
+          <span>Actualizado: <time datetime={lastModified}>Enero 2026</time></span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <article class="prose prose-invert prose-amber max-w-none space-y-8">
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">1. Responsable del Tratamiento</h2>
+          <div class="text-neutral-400 leading-relaxed space-y-2">
+            <p><strong class="text-white">Razón Social:</strong> STUDIO AMBAR S.A.S.</p>
+            <p><strong class="text-white">NIT:</strong> XXX.XXX.XXX-X</p>
+            <p><strong class="text-white">Dirección:</strong> Centro Comercial Mercurio, Local 401, Soacha, Cundinamarca</p>
+            <p><strong class="text-white">Email de Datos:</strong> <a href="mailto:datos@studioambar.com" class="text-amber-500 hover:underline">datos@studioambar.com</a></p>
+            <p><strong class="text-white">Teléfono:</strong> +57 300 123 4567</p>
+            <p><strong class="text-white">Horario de Atención:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">2. Marco Normativo Aplicable</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Esta política se fundamenta en la normativa colombiana de protección de datos:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-neutral-300">Constitución Política:</strong> Artículo 15 (Derecho a la intimidad y habeas data)</li>
+            <li><strong class="text-neutral-300">Ley 1581 de 2012:</strong> Régimen General de Protección de Datos Personales</li>
+            <li><strong class="text-neutral-300">Decreto 1377 de 2013:</strong> Reglamentación parcial de la Ley 1581</li>
+            <li><strong class="text-neutral-300">Decreto 1074 de 2015:</strong> Decreto Único Reglamentario del sector CIT</li>
+            <li><strong class="text-neutral-300">Circular Externa 002 de 2015:</strong> Instrucciones SIC sobre protección de datos</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">3. Definiciones Legales</h2>
+          <dl class="text-neutral-400 space-y-4">
+            <div>
+              <dt class="font-semibold text-white">Dato Personal</dt>
+              <dd class="ml-4">Cualquier información vinculada o que pueda asociarse a una persona natural identificada o identificable.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">Dato Sensible</dt>
+              <dd class="ml-4">Información que afecta la intimidad del titular o cuyo uso indebido puede generar discriminación (origen racial, orientación política, convicciones religiosas, datos de salud, vida sexual, datos biométricos).</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">Tratamiento</dt>
+              <dd class="ml-4">Cualquier operación sobre datos personales: recolección, almacenamiento, uso, circulación, supresión.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">Titular</dt>
+              <dd class="ml-4">Persona natural cuyos datos personales sean objeto de tratamiento.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">Autorización</dt>
+              <dd class="ml-4">Consentimiento previo, expreso e informado del titular para llevar a cabo el tratamiento.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-white">Base de Datos</dt>
+              <dd class="ml-4">Conjunto organizado de datos personales que sea objeto de tratamiento.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">4. Principios Rectores del Tratamiento</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Conforme al Artículo 4 de la Ley 1581 de 2012:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li><strong class="text-amber-500">Legalidad:</strong> Actividad reglada sujeta a las disposiciones legales vigentes</li>
+            <li><strong class="text-amber-500">Finalidad:</strong> Tratamiento con propósito legítimo informado al titular</li>
+            <li><strong class="text-amber-500">Libertad:</strong> Solo con consentimiento previo, expreso e informado</li>
+            <li><strong class="text-amber-500">Veracidad:</strong> Información veraz, completa, exacta y actualizada</li>
+            <li><strong class="text-amber-500">Transparencia:</strong> Derecho a obtener información sobre sus datos en cualquier momento</li>
+            <li><strong class="text-amber-500">Acceso Restringido:</strong> Límites derivados de la naturaleza de los datos</li>
+            <li><strong class="text-amber-500">Seguridad:</strong> Medidas técnicas, humanas y administrativas de protección</li>
+            <li><strong class="text-amber-500">Confidencialidad:</strong> Garantía de reserva de la información</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">5. Finalidades del Tratamiento</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Studio Ambar tratará los datos personales de aspirantes y modelos webcam para:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li>Gestionar procesos de selección y contratación de modelos en Soacha</li>
+            <li>Administrar la relación contractual y prestación de servicios</li>
+            <li>Procesar pagos de comisiones y beneficios económicos</li>
+            <li>Cumplir obligaciones legales, contables y tributarias (DIAN)</li>
+            <li>Enviar información sobre capacitaciones, horarios y oportunidades</li>
+            <li>Realizar seguimiento de desempeño y retroalimentación</li>
+            <li>Atender peticiones, quejas, reclamos y sugerencias (PQRS)</li>
+            <li>Implementar medidas de seguridad y protección de identidad (geobloqueo)</li>
+            <li>Realizar estudios estadísticos y análisis de mercado (anonimizados)</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-indigo-500/5 backdrop-blur-xl border border-indigo-500/20" style="box-shadow: 0 4px 24px rgba(99,102,241,0.1);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">6. Derechos de los Titulares (ARCO)</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Conforme al Artículo 8 de la Ley 1581 de 2012, como titular tienes derecho a:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-3">
+            <li>
+              <strong class="text-indigo-400">Acceso:</strong> Conocer, consultar y obtener copia de tus datos personales
+            </li>
+            <li>
+              <strong class="text-indigo-400">Rectificación:</strong> Actualizar, corregir datos inexactos o incompletos
+            </li>
+            <li>
+              <strong class="text-indigo-400">Cancelación:</strong> Solicitar supresión de datos cuando no sean necesarios
+            </li>
+            <li>
+              <strong class="text-indigo-400">Oposición:</strong> Negarte a tratamientos específicos de tus datos
+            </li>
+            <li>
+              <strong class="text-indigo-400">Revocación:</strong> Retirar tu autorización en cualquier momento
+            </li>
+            <li>
+              <strong class="text-indigo-400">Portabilidad:</strong> Recibir tus datos en formato estructurado
+            </li>
+            <li>
+              <strong class="text-indigo-400">Queja ante SIC:</strong> Presentar quejas ante la Superintendencia de Industria y Comercio
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">7. Procedimiento para Ejercer Derechos</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Para ejercer tus derechos ARCO, sigue estos pasos:
+          </p>
+          <ol class="list-decimal list-inside text-neutral-400 space-y-2 mb-4">
+            <li>Envía solicitud escrita a <strong class="text-white">datos@studioambar.com</strong></li>
+            <li>Incluye: nombre completo, número de cédula, datos de contacto</li>
+            <li>Describe claramente el derecho que deseas ejercer</li>
+            <li>Adjunta copia de tu documento de identidad</li>
+            <li>De ser necesario, incluye documentos que soporten tu solicitud</li>
+          </ol>
+          <div class="mt-4 p-4 bg-white/5 rounded-xl">
+            <p class="text-sm text-neutral-300">
+              <strong class="text-white">Tiempos de Respuesta (Ley 1581):</strong>
+            </p>
+            <ul class="text-sm text-neutral-400 mt-2 space-y-1">
+              <li>• <strong>Consultas:</strong> Máximo 10 días hábiles</li>
+              <li>• <strong>Reclamos:</strong> Máximo 15 días hábiles (prorrogables 8 días más)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">8. Medidas de Seguridad Implementadas</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Conforme al principio de seguridad, implementamos:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <h3 class="text-sm font-semibold text-amber-500 mb-2">Medidas Técnicas</h3>
+              <ul class="text-sm text-neutral-400 space-y-1">
+                <li>• Encriptación SSL/TLS en tránsito</li>
+                <li>• Encriptación AES-256 en reposo</li>
+                <li>• Firewalls y sistemas anti-intrusión</li>
+                <li>• Geobloqueo por IP para Colombia</li>
+                <li>• Backups diarios cifrados</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-amber-500 mb-2">Medidas Organizativas</h3>
+              <ul class="text-sm text-neutral-400 space-y-1">
+                <li>• Control de acceso basado en roles</li>
+                <li>• Capacitación del personal</li>
+                <li>• Acuerdos de confidencialidad</li>
+                <li>• Auditorías periódicas</li>
+                <li>• Plan de respuesta a incidentes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-amber-500/5 backdrop-blur-xl border border-amber-500/20" style="box-shadow: 0 4px 24px rgba(245,158,11,0.1);">
+          <h2 class="text-xl font-semibold text-white mb-4 font-display">9. Vigencia y Modificaciones</h2>
+          <p class="text-neutral-400 leading-relaxed mb-4">
+            Esta política entra en vigencia a partir de su publicación y permanece vigente mientras Studio Ambar 
+            realice tratamiento de datos personales. Los datos se conservarán durante:
+          </p>
+          <ul class="list-disc list-inside text-neutral-400 space-y-2">
+            <li>El tiempo necesario para cumplir las finalidades del tratamiento</li>
+            <li>La duración de la relación contractual</li>
+            <li>El período requerido por obligaciones legales y tributarias (mínimo 5 años post-contrato)</li>
+          </ul>
+          <p class="text-neutral-400 mt-4">
+            <strong class="text-white">Modificaciones:</strong> Cualquier cambio será notificado por email y publicado en esta página 
+            con 15 días de anticipación a su entrada en vigencia.
+          </p>
+        </div>
+      </article>
+
+      <!-- Related Links -->
+      <aside class="mt-12 p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/10">
+        <h3 class="text-lg font-semibold text-white mb-4 font-display">Documentos Legales Relacionados</h3>
+        <div class="flex flex-wrap gap-4">
+          <a href="/privacidad" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Política de Privacidad
+          </a>
+          <a href="/terminos" class="text-amber-500 hover:text-amber-400 transition-colors text-sm flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Términos y Condiciones
+          </a>
+        </div>
+      </aside>
+
+      <!-- Authority Info -->
+      <div class="mt-8 p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 text-center">
+        <p class="text-xs text-neutral-500">
+          Autoridad de Vigilancia: <strong class="text-neutral-400">Superintendencia de Industria y Comercio (SIC)</strong><br />
+          <a href="https://www.sic.gov.co" target="_blank" rel="noopener" class="text-amber-500 hover:underline">www.sic.gov.co</a> | 
+          Línea gratuita nacional: 01 8000 910 165
+        </p>
+      </div>
+
+      <!-- Back Link -->
+      <nav class="mt-8 pt-8 border-t border-white/10">
+        <a href="/" class="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver al inicio
+        </a>
+      </nav>
+    </div>
+  </section>
+</Layout>

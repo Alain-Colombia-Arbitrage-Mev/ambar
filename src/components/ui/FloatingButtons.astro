@@ -1,0 +1,71 @@
+---
+// Floating Social Buttons - WhatsApp & Signal
+const whatsappNumber = "573001234567"; // Cambiar por el número real
+const whatsappMessage = "Hola, estoy interesada en postularme como modelo webcam en Studio Ambar";
+const signalLink = "https://signal.me/#p/+573001234567"; // Cambiar por el enlace real
+---
+
+<!-- Floating Social Buttons Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4 sm:gap-5 items-end">
+  
+  <!-- Signal Button -->
+  <a
+    href={signalLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group flex items-center gap-3 transition-all duration-300"
+    aria-label="Contáctanos por Signal"
+  >
+    <!-- Label (appears on hover) -->
+    <span class="hidden sm:block opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300 bg-white/10 backdrop-blur-xl text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
+      Signal
+    </span>
+    
+    <!-- Button - Signal Icon -->
+    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#3A76F0] rounded-full shadow-lg shadow-[#3A76F0]/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group-hover:shadow-[#3A76F0]/50" style="box-shadow: 0 8px 24px rgba(58,118,240,0.4);">
+      <!-- Signal Logo SVG -->
+      <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" viewBox="0 0 50 50" fill="currentColor">
+        <path d="M25 2C12.3 2 2 12.3 2 25c0 3.9 1 7.6 2.7 10.9L2 48l12.5-2.6c3.1 1.5 6.6 2.4 10.3 2.4 12.8 0 23.2-10.3 23.2-23S37.7 2 25 2zm0 4c10.6 0 19.2 8.6 19.2 19.2S35.5 44.2 25 44.2c-3.3 0-6.5-.9-9.3-2.5l-.7-.4-7.2 1.5 1.5-7-.4-.7c-1.8-2.9-2.7-6.2-2.7-9.7C6.2 14.6 14.6 6 25 6z"/>
+        <path d="M25 12c-7.2 0-13 5.8-13 13 0 2.3.6 4.5 1.7 6.4l-1.1 4 4.2-1.1c1.9 1 4 1.5 6.2 1.5 7.2 0 13-5.8 13-13s-5.8-13-13-13zm0 3.5c1.9 0 3.5 1.6 3.5 3.5s-1.6 3.5-3.5 3.5-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5zm0 16.5c-2.8 0-5.3-1.4-6.8-3.5h13.6c-1.5 2.1-4 3.5-6.8 3.5z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- WhatsApp Button -->
+  <a
+    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group flex items-center gap-3 transition-all duration-300"
+    aria-label="Contáctanos por WhatsApp"
+  >
+    <!-- Label (appears on hover) -->
+    <span class="hidden sm:block opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300 bg-white/10 backdrop-blur-xl text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">
+      WhatsApp
+    </span>
+    
+    <!-- Button -->
+    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] rounded-full shadow-lg shadow-[#25D366]/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 animate-float group-hover:shadow-[#25D366]/50" style="box-shadow: 0 8px 24px rgba(37,211,102,0.4);">
+      <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+  </a>
+
+</div>
+
+<style>
+  /* Pulse animation for WhatsApp button */
+  @keyframes pulse-whatsapp {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite, pulse-whatsapp 2s ease-in-out infinite;
+  }
+</style>

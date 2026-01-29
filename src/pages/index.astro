@@ -1,0 +1,86 @@
+---
+/**
+ * Studio Ambar - Estudio Webcam Profesional en Soacha, Cundinamarca
+ * 
+ * Página principal optimizada para SEO con las siguientes keywords:
+ * - estudio webcam soacha
+ * - trabajo webcam soacha
+ * - modelaje webcam soacha
+ * - agencia webcam cundinamarca
+ * - empleo webcam bogota sur
+ */
+
+import Layout from '@/components/layout/Layout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import Stats from '@/components/sections/Stats.astro';
+import Features from '@/components/sections/Features.astro';
+import Benefits from '@/components/sections/Benefits.astro';
+import Location from '@/components/sections/Location.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import Contact from '@/components/sections/Contact.astro';
+
+const seoConfig = {
+  title: "Studio Ambar | Mejor Estudio Webcam en Soacha 2026 - Trabajo Modelos Cam",
+  description: "¿Buscas trabajo webcam en Soacha? Studio Ambar es el estudio de modelaje webcam líder en Cundinamarca. Gana hasta $8M/mes con tecnología 4K, pagos en dólares, internet 500MB y capacitación gratis. Sin experiencia requerida. ¡Postúlate hoy!",
+  keywords: [
+    // Keywords principales con intención de búsqueda
+    "estudio webcam soacha",
+    "trabajo webcam soacha",
+    "modelaje webcam soacha",
+    "agencia webcam soacha",
+    "empleo webcam soacha",
+    
+    // Keywords geográficas
+    "estudio webcam cundinamarca",
+    "trabajo webcam bogota sur",
+    "agencia modelos webcam soacha centro",
+    "estudio cam cerca de bogota",
+    
+    // Keywords de beneficios/características
+    "trabajo webcam pagos en dolares",
+    "estudio webcam internet rapido",
+    "trabajo webcam con privacidad",
+    "empleo webcam horarios flexibles",
+    "trabajo webcam sin experiencia soacha",
+    
+    // Keywords long-tail informacionales
+    "mejor estudio webcam soacha 2026",
+    "donde trabajar como modelo webcam soacha",
+    "cuanto gana modelo webcam soacha colombia",
+    "requisitos trabajo webcam soacha",
+    "como empezar webcam soacha",
+    
+    // Keywords de acción/transaccionales
+    "postularme modelo webcam soacha",
+    "aplicar trabajo webcam soacha",
+    "casting webcam soacha"
+  ]
+};
+---
+
+<Layout 
+  title={seoConfig.title}
+  description={seoConfig.description}
+  keywords={seoConfig.keywords}
+>
+  <!-- Hero Section - Above the fold con mensaje principal -->
+  <Hero />
+  
+  <!-- Stats Section - Social proof con números clave -->
+  <Stats />
+  
+  <!-- Features Section - Propuesta de valor con bento grid -->
+  <Features />
+  
+  <!-- Benefits Section - Programa de formación y beneficios -->
+  <Benefits />
+  
+  <!-- Location Section - Instalaciones y tecnología -->
+  <Location />
+  
+  <!-- FAQ Section - Preguntas frecuentes (Schema.org FAQPage) -->
+  <FAQ />
+  
+  <!-- Contact Section - Formulario de postulación -->
+  <Contact />
+</Layout>
