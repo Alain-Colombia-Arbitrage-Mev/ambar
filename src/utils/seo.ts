@@ -71,7 +71,6 @@ export const businessSchema = {
   "image": "/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Centro Comercial Mercurio, Local 401",
     "addressLocality": "Soacha",
     "addressRegion": "Cundinamarca",
     "postalCode": "250051",
