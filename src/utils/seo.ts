@@ -11,11 +11,16 @@ export interface SEOConfig {
 }
 
 export const defaultSEO: SEOConfig = {
-  title: "Studio Ambar | Mejor Estudio Webcam en Soacha, Cundinamarca",
-  description: "Únete al estudio webcam líder en Soacha. Gana hasta $8.000.000/mes con tecnología 4K, pagos en dólares, internet fibra óptica 900MB y privacidad total. Trabajo flexible para modelos webcam.",
+  title: "Estudio Webcam Soacha | Studio Ambar - Mejor Agencia Modelos 2026",
+  description: "Estudio webcam Soacha líder en Cundinamarca. Gana hasta $8.000.000/mes con tecnología 4K, pagos en dólares, internet 900MB y privacidad total. El mejor estudio webcam en Soacha te espera.",
   keywords: [
-    // Keywords principales alta búsqueda
+    // Keyword FOCUS principal
     "estudio webcam soacha",
+    
+    // Keywords principales alta búsqueda
+    "estudio webcam en soacha",
+    "estudio de webcam soacha",
+    "estudios webcam soacha cundinamarca",
     "trabajo webcam soacha",
     "modelaje webcam soacha",
     "agencia webcam soacha",
@@ -61,8 +66,8 @@ export const defaultSEO: SEOConfig = {
 export const businessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Studio Ambar",
-  "description": "Estudio webcam profesional en Soacha, Cundinamarca. Tecnología 4K, pagos en dólares y capacitación completa.",
+  "name": "Studio Ambar - Estudio Webcam Soacha",
+  "description": "Estudio webcam Soacha líder en Cundinamarca. El mejor estudio webcam en Soacha con tecnología 4K, pagos en dólares y capacitación completa.",
   "image": "/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
