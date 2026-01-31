@@ -12,7 +12,7 @@ export interface SEOConfig {
 
 export const defaultSEO: SEOConfig = {
   title: "Studio Ambar | Mejor Estudio Webcam en Soacha, Cundinamarca",
-  description: "Únete al estudio webcam líder en Soacha. Gana hasta $8.000.000/mes con tecnología 4K, pagos en dólares, internet fibra óptica 500MB y privacidad total. Trabajo flexible para modelos webcam.",
+  description: "Únete al estudio webcam líder en Soacha. Gana hasta $8.000.000/mes con tecnología 4K, pagos en dólares, internet fibra óptica 900MB y privacidad total. Trabajo flexible para modelos webcam.",
   keywords: [
     // Keywords principales
     "estudio webcam soacha",
@@ -88,8 +88,10 @@ export const businessSchema = {
       "closes": "23:59"
     }
   ],
-  "telephone": "+57-300-XXX-XXXX",
-  "url": "https://studioambar.com"
+  "url": "https://studioambar.com",
+  "sameAs": [
+    "https://wa.me/message/XXXX"
+  ]
 };
 
 export const faqSchema = {
@@ -125,7 +127,7 @@ export const faqSchema = {
       "name": "¿Qué equipo tecnológico tiene el estudio webcam?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Contamos con cámaras Logitech Brio 4K, computadores gaming con procesadores i7 y tarjetas RTX, internet fibra óptica de 500MB dedicados, iluminación LED profesional y habitaciones insonorizadas."
+        "text": "Contamos con cámaras Logitech Brio 4K, computadores gaming con procesadores i7 y tarjetas RTX, internet fibra óptica de 900MB dedicados, iluminación LED profesional y habitaciones insonorizadas."
       }
     },
     {

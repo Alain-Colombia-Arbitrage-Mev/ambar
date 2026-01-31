@@ -53,7 +53,9 @@ const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Am
   <meta property="og:url" content={canonical} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:image" content="https://studioambar.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:site_name" content="Studio Ambar" />
   
@@ -62,7 +64,7 @@ const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Am
   <meta property="twitter:url" content={canonical} />
   <meta property="twitter:title" content={fullTitle} />
   <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content="/og-image.jpg" />
+  <meta property="twitter:image" content="https://studioambar.com/og-image.jpg" />
   
   <!-- Geo Tags for Local SEO -->
   <meta name="geo.region" content="CO-CUN" />
@@ -70,13 +72,25 @@ const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Am
   <meta name="geo.position" content="4.5833;-74.2167" />
   <meta name="ICBM" content="4.5833, -74.2167" />
   
-  <!-- Favicon -->
+  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#f59e0b" />
+  
+  <!-- Hreflang for regional SEO -->
+  <link rel="alternate" hreflang="es-CO" href={canonical} />
+  <link rel="alternate" hreflang="es" href={canonical} />
+  <link rel="alternate" hreflang="x-default" href={canonical} />
   
   <!-- Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" as="style" />
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
