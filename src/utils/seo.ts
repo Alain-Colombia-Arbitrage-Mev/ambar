@@ -14,38 +14,44 @@ export const defaultSEO: SEOConfig = {
   title: "Studio Ambar | Mejor Estudio Webcam en Soacha, Cundinamarca",
   description: "Únete al estudio webcam líder en Soacha. Gana hasta $8.000.000/mes con tecnología 4K, pagos en dólares, internet fibra óptica 900MB y privacidad total. Trabajo flexible para modelos webcam.",
   keywords: [
-    // Keywords principales
+    // Keywords principales alta búsqueda
     "estudio webcam soacha",
     "trabajo webcam soacha",
     "modelaje webcam soacha",
     "agencia webcam soacha",
     "empleo webcam soacha",
+    "studio webcam cundinamarca",
     
     // Keywords secundarias
     "estudio de modelos soacha",
-    "trabajo para mujeres soacha",
-    "empleo bien pago soacha",
-    "trabajo independiente soacha",
-    "modelos cam soacha",
+    "trabajo para mujeres soacha bien pago",
+    "empleo bien pago soacha 2026",
+    "trabajo independiente soacha flexible",
+    "modelos cam soacha profesional",
     
-    // Keywords de ubicación
-    "estudio webcam cundinamarca",
-    "agencia webcam bogota sur",
+    // Keywords de ubicación expandidas
+    "estudio webcam cundinamarca bogota",
+    "agencia webcam bogota sur soacha",
     "trabajo webcam cerca de bogota",
-    "estudio modelos soacha centro",
+    "estudio modelos soacha centro mercurio",
+    "webcam ciudad verde soacha",
+    "webcam san mateo compartir",
     
     // Keywords de beneficios
-    "trabajo webcam pagos en dolares",
-    "estudio webcam con internet rapido",
-    "trabajo webcam privacidad garantizada",
-    "empleo webcam horarios flexibles",
-    "trabajo modelos sin experiencia",
+    "trabajo webcam pagos en dolares colombia",
+    "estudio webcam internet 900mb fibra",
+    "trabajo webcam privacidad geobloqueo",
+    "empleo webcam horarios flexibles 24h",
+    "trabajo modelos sin experiencia capacitacion",
+    "webcam pago quincenal bancolombia nequi",
     
-    // Keywords long-tail
+    // Keywords long-tail informacionales
     "mejor estudio webcam soacha 2026",
     "donde trabajar como modelo webcam soacha",
-    "requisitos trabajo webcam soacha",
-    "cuanto gana modelo webcam soacha"
+    "requisitos trabajo webcam soacha colombia",
+    "cuanto gana modelo webcam soacha mensual",
+    "es seguro trabajar webcam colombia",
+    "como empezar carrera webcam soacha"
   ],
   ogImage: "/og-image.jpg",
   ogType: "website",

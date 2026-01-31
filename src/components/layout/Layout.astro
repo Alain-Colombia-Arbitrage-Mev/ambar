@@ -26,6 +26,12 @@ const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Am
 
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+<script is:inline>
+  // Prevent flash - check theme immediately
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -106,10 +112,10 @@ const fullTitle = title.includes('Studio Ambar') ? title : `${title} | Studio Am
   <!-- Additional head content from pages -->
   <slot name="head" />
 </head>
-<body class="bg-noise antialiased">
+<body class="bg-noise antialiased transition-colors duration-300">
   <!-- Ambient Background Effects -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-    <div class="absolute inset-0 bg-grid opacity-20"></div>
+    <div class="absolute inset-0 bg-grid opacity-20 dark-only"></div>
     <div class="absolute top-[-30%] left-[10%] w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-amber-600/5 rounded-full blur-[100px] sm:blur-[150px]"></div>
     <div class="absolute bottom-[-20%] right-[0%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-900/5 rounded-full blur-[80px] sm:blur-[120px]"></div>
   </div>
