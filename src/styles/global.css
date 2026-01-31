@@ -7,39 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === CSS Variables for Theme === */
-:root {
-  /* Dark Mode (Default) */
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --bg-card-hover: rgba(255, 255, 255, 0.05);
-  --text-primary: #ffffff;
-  --text-secondary: #a3a3a3;
-  --text-muted: #737373;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(255, 255, 255, 0.2);
-  --shadow-color: rgba(0, 0, 0, 0.4);
-  --glass-bg: rgba(0, 0, 0, 0.4);
-  --nav-bg: rgba(0, 0, 0, 0.6);
-}
-
-html.light {
-  /* Light Mode */
-  --bg-primary: #fafafa;
-  --bg-secondary: #f5f5f5;
-  --bg-card: rgba(0, 0, 0, 0.02);
-  --bg-card-hover: rgba(0, 0, 0, 0.05);
-  --text-primary: #171717;
-  --text-secondary: #525252;
-  --text-muted: #737373;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --border-hover: rgba(0, 0, 0, 0.2);
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --nav-bg: rgba(255, 255, 255, 0.8);
-}
-
 /* === Base Layer === */
 @layer base {
   html {
@@ -49,17 +16,13 @@ html.light {
   }
 
   body {
-    @apply font-body;
-    background-color: var(--bg-primary);
-    color: var(--text-secondary);
+    @apply bg-black text-neutral-200 font-body;
     overflow-x: hidden;
     min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold;
-    color: var(--text-primary);
+    @apply font-display font-semibold text-white;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
@@ -70,7 +33,7 @@ html.light {
   h4 { @apply text-lg md:text-xl; }
 
   p {
-    color: var(--text-secondary);
+    @apply text-neutral-400;
     max-width: 65ch;
   }
 
@@ -79,11 +42,7 @@ html.light {
   }
 
   ::selection {
-    @apply bg-amber-500/30 text-amber-900;
-  }
-
-  html.light ::selection {
-    @apply bg-amber-200 text-amber-900;
+    @apply bg-amber-900/30 text-amber-200;
   }
 
   /* Scrollbar */
@@ -93,12 +52,11 @@ html.light {
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
+    @apply bg-neutral-950;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full;
-    background: var(--border-color);
+    @apply bg-neutral-800 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -273,193 +231,12 @@ html.light {
   /* Nav link active state */
   .nav-link {
     @apply px-4 py-2 text-xs font-medium rounded-full
+           text-neutral-400 hover:text-white
            hover:bg-white/5 transition-all;
-    color: var(--text-muted);
-  }
-
-  .nav-link:hover {
-    color: var(--text-primary);
   }
 
   .nav-link.active {
-    color: var(--text-primary);
-    @apply bg-white/10;
-  }
-
-  /* Navigation Glass Effect */
-  .nav-glass {
-    background: var(--nav-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px var(--shadow-color), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  }
-
-  html.light .nav-glass {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-
-  /* Menu icon color */
-  .menu-icon-color {
-    color: var(--text-primary);
-  }
-
-  /* Light mode specific overrides */
-  html.light .glass-card {
-    @apply bg-white/80 border-neutral-200;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  html.light .text-gradient-gold {
-    @apply from-amber-600 to-amber-700;
-  }
-
-  html.light .badge-amber {
-    @apply bg-amber-100 border-amber-200 text-amber-700;
-  }
-
-  /* Light mode text color overrides */
-  html.light .text-white {
-    color: var(--text-primary) !important;
-  }
-
-  html.light .text-neutral-200,
-  html.light .text-neutral-300 {
-    color: var(--text-secondary) !important;
-  }
-
-  html.light .text-neutral-400,
-  html.light .text-neutral-500 {
-    color: var(--text-muted) !important;
-  }
-
-  html.light .text-neutral-600 {
-    color: #525252 !important;
-  }
-
-  /* Light mode background overrides */
-  html.light .bg-black {
-    background-color: var(--bg-primary) !important;
-  }
-
-  html.light .bg-black\/40,
-  html.light .bg-black\/60 {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-  }
-
-  html.light .bg-neutral-900,
-  html.light .bg-neutral-900\/40,
-  html.light .bg-neutral-900\/50 {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  html.light .bg-neutral-950 {
-    background-color: #f5f5f5 !important;
-  }
-
-  /* Light mode glass effects */
-  html.light .bg-white\/\[0\.02\],
-  html.light .bg-white\/\[0\.03\],
-  html.light .bg-white\/\[0\.05\],
-  html.light .bg-white\/\[0\.06\] {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  html.light .bg-white\/5,
-  html.light .bg-white\/10 {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-  }
-
-  /* Light mode borders */
-  html.light .border-white\/5,
-  html.light .border-white\/10,
-  html.light .border-white\/15,
-  html.light .border-white\/20 {
-    border-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Light mode hover states */
-  html.light .hover\:bg-white\/5:hover,
-  html.light .hover\:bg-white\/10:hover,
-  html.light .hover\:bg-white\/\[0\.06\]:hover {
-    background-color: rgba(0, 0, 0, 0.08) !important;
-  }
-
-  html.light .hover\:border-white\/10:hover,
-  html.light .hover\:border-white\/20:hover {
-    border-color: rgba(0, 0, 0, 0.15) !important;
-  }
-
-  /* Light mode cards and sections */
-  html.light .glass,
-  html.light .glass-subtle,
-  html.light .glass-glow {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  }
-
-  html.light .glass-amber {
-    background-color: rgba(245, 158, 11, 0.08) !important;
-    border-color: rgba(245, 158, 11, 0.2) !important;
-  }
-
-  /* Light mode buttons */
-  html.light .btn-ghost {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-    color: var(--text-primary) !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  html.light .btn-ghost:hover {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Light mode navigation */
-  html.light .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-  }
-
-  html.light .nav-link.active {
-    background-color: rgba(0, 0, 0, 0.08) !important;
-  }
-
-  /* Light mode card styles */
-  html.light .card {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Light mode mobile menu */
-  html.light #mobile-menu {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Light mode footer */
-  html.light footer {
-    background-color: #f5f5f5 !important;
-  }
-
-  /* Light mode stats/features cards */
-  html.light [style*="box-shadow: inset"] {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-  }
-
-  /* Light mode decorative elements - hide or reduce */
-  html.light .bg-grid {
-    opacity: 0.5 !important;
-    background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
-  }
-
-  html.light .bg-noise::before {
-    opacity: 0.01 !important;
-  }
-
-  /* Light mode gradient blobs - reduce intensity */
-  html.light .bg-amber-600\/5,
-  html.light .bg-purple-900\/5 {
-    opacity: 0.3 !important;
+    @apply text-white bg-white/10;
   }
 }
 
